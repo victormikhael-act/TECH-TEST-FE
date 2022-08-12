@@ -1,6 +1,19 @@
-<header>
-  <span>Employees</span>
-</header>
-<div class="content">
-  <span>Fill the content</span>
-</div>
+<form class = "form-control">
+  <header>
+    <div>Employees</div>
+  </header>
+  <span>
+    <b>Active Emp:</b>
+    <label class="switch"> 
+      <input type="checkbox" [(ngModel)] = "checked" name = "checked" (click)="toggle()">
+      <span class="slider round"></span>
+    </label>
+  </span>
+  <div>
+
+    <ol>
+      <ng-container *ngFor="let emp of empFetched">
+        <li *ngIf = "!checked || emp.isActive" [ngStyle]="{'background-color':emp.position === 'MANAGER' ? 'green' : '' }" (click)="goEmpDet(emp)"> First Name : {{emp.firstName}}  Last Name :{{emp.lastName}}  Position :{{emp.position}}</li>
+      </ng-container>    
+     </ol>
+  </div>

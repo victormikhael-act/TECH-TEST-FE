@@ -1,9 +1,13 @@
-<header>
-  <span>EmployeeName</span>
-</header>
-<div class="content">
-  <span>Fill the content</span>
-</div>
-<!-- <footer>
-  <button (click)="update()">Update</button>
-</footer> -->
+<form class = "form-control">
+  <header>
+    <div>Employees Name and LastName : {{emp.lastName}} , {{emp.firstName}} </div>
+  </header>
+
+ <div class = 'det'> Position : {{emp.position}} </div> 
+ <div class = 'det'> id : {{emp.id}} </div> 
+<div class = 'det'> Date Of Birth : {{ emp.dateOfBirth | date: 'dd-MM-yyyy'}} </div>
+<div class = 'det'> Active : {{ emp.isActive}} </div>
+<label class="switch"> 
+  <input type="checkbox" [checked]= "emp.isActive">
+  <span class="slider round"></span>
+</label>

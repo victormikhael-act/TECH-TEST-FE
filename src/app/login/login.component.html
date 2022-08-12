@@ -1,10 +1,16 @@
-<header>
-  <span>Login</span>
-</header>
-<div class="content">
-  <input placeholder="username" />
-  <input placeholder="password" />
-</div>
-<footer>
-  <button (click)="login()">login</button>
-</footer>
+<form class = "form-control">
+  <header>
+    <div>Login</div>
+  </header>
+  <div>
+    <input type="text" name="user" id="user" placeholder="Username" maxlength="8" [(ngModel)] = "data.USERNAME"/><br />
+    <input type="password" name ="password" id="password" placeholder="Password"  maxlength="16" [(ngModel)] = "data.PASSWORD"  [ngStyle]= "{'border-bottom': showAlertPass ? '1px solid red' : '' }" />
+    
+
+    <p *ngIf="showAlertPass" id = "alert" >Your Password must be at least 8 characters long. </p>
+  </div>
+  <footer>
+    <input type="submit" value="Login" class="btn btn-block" (click)="login()" />
+    <div> <p style="color:red;"> {{ message }}</p></div>
+  </footer>
+</form>

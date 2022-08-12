@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, EmployeesComponent, EmployeeDetailsComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule,ReactiveFormsModule,FormsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })

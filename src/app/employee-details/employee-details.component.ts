@@ -16,6 +16,10 @@ message='';
       this.emp =  this.empdetService.getData();
       console.log ('3')
       console.log ('this.emp => ' + this.emp.lastName)
+      var timeDiff = Math.abs(Date.now() - this.emp.dateOfBirth);
+      //Used Math.floor instead of Math.ceil
+      //so 26 years and 140 days would be considered as 26, not 27.
+      this.emp.age = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
     }
     catch(err){
       this.message = 'Error server side';

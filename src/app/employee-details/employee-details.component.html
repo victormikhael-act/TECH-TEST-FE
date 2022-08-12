@@ -5,7 +5,9 @@
 
  <div class = 'det'> Position : {{emp.position}} </div> 
  <div class = 'det'> id : {{emp.id}} </div> 
-<div class = 'det'> Date Of Birth : {{ emp.dateOfBirth | date: 'dd-MM-yyyy'}} </div>
+ <div class = 'det'> Start Date : {{ emp.startDate | date: 'dd-MM-yyyy'}} </div>
+ <div class = 'det'> End Date : {{ emp.endDate | date: 'dd-MM-yyyy'}} </div>
+<div class = 'det'> Age : {{ emp.age}} </div>
 <div class = 'det'> Active : {{ emp.isActive}} </div>
 <label class="switch"> 
   <input type="checkbox" [checked]= "emp.isActive">
